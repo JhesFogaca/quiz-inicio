@@ -27,6 +27,28 @@ body {
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+/* Estilo simples para a nav */
+.navbar {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+}
+
+.btn-home {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: var(--azul);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.226);
+}
+
+.btn-home:hover {
+    background-color: var(--laranja);
+}
+
 /* container do tamanho do conteúdo */
 .container {
     position: relative;
@@ -101,8 +123,10 @@ body {
     top: 90px;
     display: flex;
     gap: 3px;
-    left: 50%;                     /* joga o início no meio */
-    transform: translateX(-50%);   /* puxa metade da largura p/ trás */
+    left: 50%;
+    /* joga o início no meio */
+    transform: translateX(-50%);
+    /* puxa metade da largura p/ trás */
     padding: 4px;
     justify-content: space-evenly;
     width: 450px;
