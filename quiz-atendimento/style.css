@@ -1,0 +1,246 @@
+/* reset mínimo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta */
+:root {
+    --laranja: #EE512D;
+    --azul: #005E77;
+    --cinza-claro: #E6E7EA;
+    --branco: #FFFFFF;
+}
+
+/* layout com footer sticky */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #01485c;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* container do tamanho do conteúdo */
+.container {
+    position: relative;
+    /* âncora p/ absolutos */
+    width: 100%;
+    max-width: 480px;
+    /* responsivo */
+    margin: 80px auto;
+    background-color: var(--branco);
+    color: #000;
+    border-radius: 8px;
+    padding: 100px 16px 16px;
+    /* espaço p/ título e status */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+/* título central superior */
+.titulo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--azul);
+    color: #FFFFFF;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+}
+
+.titulo h1 {
+    font-size: 38px;
+}
+
+/* “orelhinhas” laterais (acabamento) */
+.titulo::before,
+.titulo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    pointer-events: none;
+}
+
+/* lado esquerdo */
+.titulo::before {
+    left: -30px;
+    border-top-right-radius: 50%;
+    /* truque do box-shadow para “preencher” com a mesma cor do título */
+    box-shadow: 15px 0 0 0 var(--azul);
+}
+
+/* lado direito */
+.titulo::after {
+    right: -30px;
+    border-top-left-radius: 50%;
+    box-shadow: -15px 0 0 0 var(--azul);
+}
+
+.hidden {
+    display: none;
+}
+
+/* status no canto superior direito */
+#status-container {
+    position: absolute;
+    top: 90px;
+    display: flex;
+    gap: 3px;
+    left: 50%;                     /* joga o início no meio */
+    transform: translateX(-50%);   /* puxa metade da largura p/ trás */
+    padding: 4px;
+    justify-content: space-evenly;
+    width: 450px;
+    border-radius: 8px;
+}
+
+span {
+    background: var(--cinza-claro);
+    color: var(--azul);
+    height: 24px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.status {
+    background: var(--cinza-claro);
+    color: var(--azul);
+    height: 24px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+/* bloco do quiz */
+.quiz {
+    /*background: blueviolet;*/
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.quiz h2 {
+    text-align: center;
+    color: var(--azul);
+    margin-bottom: 18px;
+}
+
+/* opções com rádio invisível + label clicável */
+.option {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.option label {
+    display: block;
+    background: var(--cinza-claro);
+    color: black;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .06s ease, background-color .2s ease;
+    user-select: none;
+}
+
+/* hover: leve zoom */
+.option label:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .10);
+}
+
+/* selecionado */
+.option input[type="radio"]:checked+label {
+    background: var(--laranja);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* foco via teclado (acessibilidade) */
+.option input[type="radio"]:focus-visible+label {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+
+#restart-btn {
+    margin: 18px auto 8px;
+    display: block;
+    width: 120px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: var(--laranja);
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* botão e feedback */
+#btn-conf {
+    margin: 18px auto 8px;
+    display: block;
+    width: 120px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: var(--laranja);
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#feedback {
+    margin-top: 16px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* footer sticky */
+footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    background-color: var(--laranja);
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* responsivo básico */
+@media (max-width: 420px) {
+    #status-container {
+        gap: 6px;
+        padding: 4px;
+    }
+
+    .status {
+        height: 22px;
+        padding: 0 8px;
+    }
+
+    .titulo {
+        width: 180px;
+        height: 64px;
+    }
+}

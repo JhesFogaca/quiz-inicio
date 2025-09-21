@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Escolha seu Quiz</title>
+
+    <!-- Paleta principal -->
+    <meta name="theme-color" content="#005E77">
+    <link rel="stylesheet" href="home.css" />
+
+    <!-- (Opcional) Prefetch para acelerar a primeira navegação -->
+    <link rel="prefetch" href="quiz-atendimento/login/login-index.html" as="document">
+    <link rel="prefetch" href="quiz-lentes/login/login-index.html" as="document">
+    <link rel="prefetch" href="quiz-patologias/login/login-index.html" as="document">
+    <link rel="prefetch" href="quiz-receita/login/login-index.html" as="document">
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>Portal Óptico — Quizzes</h1>
+        <p>Escolha um quiz para jogar</p>
+    </header>
+
+    <main class="grid">
+        <!-- Card 1 -->
+        <a class="card" href="quiz-atendimento/login/login-index.html">
+            <div class="card-hero" aria-hidden="true">
+                <!-- Ilustração leve (SVG inline) -->
+                <svg viewBox="0 0 64 64" class="icon" role="img" aria-label="Quiz Óptico 1">
+                    <circle cx="32" cy="32" r="28" fill="#005E77" />
+                    <circle cx="24" cy="30" r="8" fill="#E6E7EA" />
+                    <circle cx="40" cy="30" r="8" fill="#E6E7EA" />
+                    <rect x="19" y="28" width="10" height="4" rx="2" fill="#EE512D" />
+                    <rect x="35" y="28" width="10" height="4" rx="2" fill="#EE512D" />
+                </svg>
+            </div>
+            <h2>Quiz 1</h2>
+            <p>Vendas & Atendimento</p>
+            <span class="btn">Jogar</span>
+        </a>
+
+        <!-- Card 2 -->
+        <a class="card" href="quiz-lentes/login/login-index.html">
+            <div class="card-hero" aria-hidden="true">
+                <svg viewBox="0 0 64 64" class="icon" role="img" aria-label="Quiz Óptico 2">
+                    <circle cx="32" cy="32" r="28" fill="#005E77" />
+                    <path d="M16 32h32" stroke="#E6E7EA" stroke-width="6" stroke-linecap="round" />
+                    <circle cx="24" cy="32" r="6" fill="#EE512D" />
+                    <circle cx="40" cy="32" r="6" fill="#EE512D" />
+                </svg>
+            </div>
+            <h2>Quiz 2</h2>
+            <p>Tipos de Lentes para Óculos e Recomendações</p>
+            <span class="btn">Jogar</span>
+        </a>
+
+        <!-- Card 3 -->
+        <a class="card" href="quiz-patologias/login/login-index.html">
+            <div class="card-hero" aria-hidden="true">
+                <svg viewBox="0 0 64 64" class="icon" role="img" aria-label="Quiz Óptico 3">
+                    <rect x="8" y="14" width="48" height="36" rx="8" fill="#005E77" />
+                    <circle cx="24" cy="32" r="8" fill="#E6E7EA" />
+                    <circle cx="40" cy="32" r="8" fill="#E6E7EA" />
+                </svg>
+            </div>
+            <h2>Quiz 3</h2>
+            <p>Patologias Mais Comuns</p>
+            <span class="btn">Jogar</span>
+        </a>
+
+        <!-- Card 4 -->
+        <a class="card" href="quiz-receita/login/login-index.html">
+            <div class="card-hero" aria-hidden="true">
+                <svg viewBox="0 0 64 64" class="icon" role="img" aria-label="Quiz Óptico 4">
+                    <circle cx="32" cy="32" r="28" fill="#005E77" />
+                    <path d="M20 28h8M36 28h8" stroke="#E6E7EA" stroke-width="4" stroke-linecap="round" />
+                    <path d="M20 40h24" stroke="#EE512D" stroke-width="4" stroke-linecap="round" />
+                </svg>
+            </div>
+            <h2>Quiz 4</h2>
+            <p>Leitura de Receita Óptica</p>
+            <span class="btn">Jogar</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        <small>© Jhés Fogaça - Front-End</small>
+    </footer>
+</body>
+
+</html>

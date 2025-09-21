@@ -1,0 +1,114 @@
+:root {
+    --laranja: #EE512D;
+    --azul: #005E77;
+    --cinza-claro: #E6E7EA;
+    --branco: #FFFFFF;
+
+    --azul-escuro: #001f29;
+    --azul-profundo: #003a4a;
+}
+
+/* reset */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    color: var(--branco);
+    background: var(--azul-escuro);
+}
+
+.conteudo {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 4rem 1rem;
+    z-index: 1;
+    /* acima do fundo */
+}
+
+/* ===========================
+    FUNDO ESTRELADO
+   =========================== */
+.quiz-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background:
+        radial-gradient(120% 80% at 50% 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .35) 100%),
+        linear-gradient(180deg, var(--azul-profundo), var(--azul-escuro));
+}
+
+/* camada 1 — estrelas pequenas e densas */
+.quiz-bg::before {
+    content: "";
+    position: absolute;
+    inset: -20vh 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 5% 10%, rgba(255, 255, 255, .9) 99%, transparent 101%),
+        radial-gradient(1.5px 1.5px at 15% 80%, rgba(255, 255, 255, .7) 99%, transparent 101%),
+        radial-gradient(2px 2px at 25% 40%, rgba(255, 255, 255, .85) 99%, transparent 101%),
+        radial-gradient(2px 2px at 40% 60%, rgba(255, 255, 255, .8) 99%, transparent 101%),
+        radial-gradient(1.5px 1.5px at 60% 20%, rgba(255, 255, 255, .7) 99%, transparent 101%),
+        radial-gradient(2px 2px at 75% 70%, rgba(255, 255, 255, .85) 99%, transparent 101%),
+        radial-gradient(2px 2px at 90% 30%, rgba(255, 255, 255, .9) 99%, transparent 101%),
+        radial-gradient(1.5px 1.5px at 50% 90%, rgba(255, 255, 255, .8) 99%, transparent 101%);
+    background-size: 400px 400px, 500px 500px, 600px 600px, 700px 700px,
+        450px 450px, 550px 550px, 650px 650px, 750px 750px;
+    background-repeat: repeat;
+    animation: flutua 60s linear infinite;
+    opacity: .9;
+}
+
+/* camada 2 — estrelas médias */
+.quiz-bg::after {
+    content: "";
+    position: absolute;
+    inset: -30vh 0;
+    background-image:
+        radial-gradient(2.5px 2.5px at 20% 25%, rgba(255, 255, 255, .95) 99%, transparent 101%),
+        radial-gradient(3px 3px at 70% 50%, rgba(255, 255, 255, .9) 99%, transparent 101%),
+        radial-gradient(2px 2px at 40% 75%, rgba(255, 255, 255, .85) 99%, transparent 101%),
+        radial-gradient(2.5px 2.5px at 85% 60%, rgba(255, 255, 255, .9) 99%, transparent 101%);
+    background-size: 600px 600px, 700px 700px, 800px 800px, 900px 900px;
+    background-repeat: repeat;
+    animation: flutua 45s linear infinite;
+    opacity: .8;
+}
+
+@keyframes flutua {
+    0% {
+        transform: translateY(0);
+        opacity: .85;
+    }
+
+    50% {
+        transform: translateY(-20vh);
+        opacity: .9;
+    }
+
+    100% {
+        transform: translateY(-40vh);
+        opacity: .85;
+    }
+}
+
+/* acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+
+    .quiz-bg::before,
+    .quiz-bg::after {
+        animation: none !important;
+    }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz Óptico — Fundo Animado</title>
+    <link rel="stylesheet" href="quiz-bg.css" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="quiz-bg" aria-hidden="true"></div>
+    <!-- Conteúdo da página (exemplo) -->
+    <main class="conteudo">
+        <div class="container">
+        <div class="titulo">
+            <h1>Quiz</h1>
+        </div>
+
+
+        
+        <!-- status: apenas os itens de status -->
+        <div id="status-container" class="">
+            <div class="status" id="prog">Progresso</div>
+            <div class="status" id="pont">Pontos</div>
+            <div class="status player" id="nome">Nome</div>
+            <span>Tempo: <span class="timer">00</span></span>
+        </div>
+
+        <!-- conteúdo do quiz -->
+        <form id="quiz" class="quiz">
+            <h2>Pergunta</h2>
+
+            <div class="option">
+                <input type="radio" name="resp" id="resp1" />
+                <label for="resp1"></label>
+            </div>
+
+            <div class="option">
+                <input type="radio" name="resp" id="resp2" />
+                <label for="resp2"></label>
+            </div>
+
+            <div class="option">
+                <input type="radio" name="resp" id="resp3" />
+                <label for="resp3"></label>
+            </div>
+
+            <button id="btn-conf" type="submit">Confirmar</button>
+            <p id="feedback">Sua resposta está:</p>
+        </form>
+        <div id="final-screen" class="hidden">
+            <h2>Quiz finalizado!</h2>
+            <p id="final-score"></p>
+            <button id="restart-btn" type="button">Reiniciar</button>
+        </div>
+    </div>
+    <!-- Tela final escondida -->
+
+
+
+    <footer>By Jhes Fogaça</footer>
+    </main>
+
+</body>
+
+</html>

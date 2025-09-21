@@ -1,0 +1,156 @@
+:root {
+    --laranja: #EE512D;
+    --azul: #005E77;
+    --cinza-claro: #E6E7EA;
+    --branco: #FFFFFF;
+
+    --bg: #0b2f3a;
+    /* fundo da landing */
+    --card: #ffffff;
+    /* fundo dos cards */
+    --ink: #0f172a;
+    /* texto */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--branco);
+    background: radial-gradient(120% 80% at 50% 0%, rgba(0, 0, 0, .25), transparent 40%),
+        linear-gradient(180deg, #08323d, var(--bg));
+}
+
+/* topo */
+.topbar {
+    text-align: center;
+    padding: 28px 12px 12px;
+}
+
+.topbar h1 {
+    margin: 0 0 4px;
+    font-size: clamp(22px, 3.5vw, 32px);
+}
+
+.topbar p {
+    margin: 0;
+    opacity: .85;
+}
+
+/* grid de cards */
+.grid {
+    width: min(1100px, 94vw);
+    margin: 16px auto 40px;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* responsivo: 2 colunas tablet, 1 no mobile */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* card (link) */
+.card {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--ink);
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+    border: 1px solid rgba(0, 0, 0, .06);
+    transform: translateZ(0);
+    /* acelera */
+    transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .18);
+    border-color: rgba(0, 0, 0, .12);
+}
+
+/* “capa” do card */
+.card-hero {
+    display: grid;
+    place-items: center;
+    height: 140px;
+    border-radius: 10px;
+    background:
+        radial-gradient(120% 80% at 50% 0%, rgba(0, 0, 0, .06), transparent 42%),
+        linear-gradient(180deg, #e9f1f4, #dce7ec);
+    border: 1px solid rgba(0, 0, 0, .06);
+}
+
+/* ícone SVG leve, usa paleta */
+.icon {
+    width: 92px;
+    height: 92px;
+    display: block;
+}
+
+/* textos do card */
+.card h2 {
+    margin: 4px 4px 0;
+    font-size: 18px;
+    color: var(--azul);
+}
+
+.card p {
+    margin: 0 4px 8px;
+    color: #334155;
+}
+
+/* botão */
+.btn {
+    justify-self: start;
+    background: var(--laranja);
+    color: var(--branco);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 8px 18px rgba(238, 81, 45, .28);
+    transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.card:hover .btn {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(238, 81, 45, .36);
+}
+
+/* rodapé */
+.footer {
+    text-align: center;
+    padding: 18px 12px 28px;
+    opacity: .85;
+}
+
+/* acessibilidade: reduz movimento */
+@media (prefers-reduced-motion: reduce) {
+
+    .card,
+    .btn {
+        transition: none;
+    }
+}
