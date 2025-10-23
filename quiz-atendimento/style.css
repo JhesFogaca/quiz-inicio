@@ -59,6 +59,16 @@ body {
     background-color: var(--laranja);
 }
 
+.bird{
+    background-image: url(login/1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 6em;
+    height: 16em;
+    transform: translateY(-150px) translateX(-20%);
+
+}
+
 /* container do tamanho do conteúdo */
 .container {
     position: relative;
@@ -132,13 +142,13 @@ body {
     position: absolute;
     top: 90px;
     display: flex;
-    gap: 3px;
+    gap: 10px;
     left: 50%;
     /* joga o início no meio */
     transform: translateX(-50%);
     /* puxa metade da largura p/ trás */
     padding: 4px;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 450px;
     border-radius: 8px;
 }
@@ -165,6 +175,7 @@ span {
     padding: 12px;
     border-radius: 8px;
     margin-top: 30px;
+    position: relative;
 }
 
 .quiz h2 {
@@ -242,6 +253,42 @@ span {
     color: #FFFFFF;
     font-size: 16px;
     cursor: pointer;
+}
+
+#container-explosao {
+    display: none;  /*Esconde o contêiner por padrão */
+    background-image: url(login/fest.gif);
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%) translateX(-2%);
+    width: 100%; /* Ajuste o tamanho conforme o seu GIF */
+    height: 100%; /* Ajuste o tamanho conforme o seu GIF */
+    background-size: cover; /* Faz o GIF preencher todo o contêiner */
+}
+
+/* Quando a classe "ativo" for adicionada, o GIF aparecerá */
+#container-explosao.ativo {
+    display: block;
+    background-image: url(login/fest.gif);
+}
+
+#container-explosao2 {
+    display: none;  /*Esconde o contêiner por padrão */
+    background-image: url(login/errado.gif);
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%) translateX(-2%);
+    width: 100%; /* Ajuste o tamanho conforme o seu GIF */
+    height: 100%; /* Ajuste o tamanho conforme o seu GIF */
+    background-size: cover; /* Faz o GIF preencher todo o contêiner */
+}
+
+/* Quando a classe "ativo" for adicionada, o GIF aparecerá */
+#container-explosao2.ativo {
+    display: block;
+    background-image: url(login/errado.gif);
 }
 
 #feedback {

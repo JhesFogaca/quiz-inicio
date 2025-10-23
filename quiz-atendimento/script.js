@@ -94,6 +94,8 @@ function loadQuestion() {
     submitBtn.textContent = "Confirmar";
 }
 
+
+
 // Pega índice selecionado
 function getSelectedIndex() {
     let idx = null;
@@ -111,6 +113,7 @@ function showResult() {
     submitBtn.textContent = "Reiniciar";
     finished = true;
 }
+
 
 // Clique no botão
 quizForm.addEventListener("submit", (e) => {
@@ -137,18 +140,37 @@ quizForm.addEventListener("submit", (e) => {
         feedback.textContent = "Sua resposta está CERTA! +10 pontos";
         feedback.style.color = "#16a34a"; // verde
         feedback.style.fontSize = "20px";
+        const containerExplosao = document.getElementById('container-explosao');
+
+        // Mostra o GIF
+        containerExplosao.classList.add('ativo');
+
+        // Remove a classe para esconder o GIF novamente após 1.5 segundos
+        // (Ajuste o tempo para a duração do seu GIF)
+        setTimeout(() => {
+            containerExplosao.classList.remove('ativo');
+        }, 1500);
+
     } else {
         feedback.textContent = "Sua resposta está ERRADA";
         feedback.style.color = "#dc2626"; // vermelho
+        const containerExplosao = document.getElementById('container-explosao2');
+        containerExplosao.classList.add('ativo');
+        setTimeout(() => {
+            containerExplosao.classList.remove('ativo');
+        }, 1200);
+
     }
+
+
 
     // Próxima pergunta
     currentQuestion++;
     if (currentQuestion < quizData.length) {
         // pequena pausa visual (opcional)
-        setTimeout(loadQuestion, 1000);
+        setTimeout(loadQuestion, 1500);
     } else {
-        setTimeout(showResult, 1000);
+        setTimeout(showResult, 1500);
     }
     const quizForm = document.getElementById("quiz");
     const statusContainer = document.getElementById("status-container");
